@@ -1,0 +1,76 @@
+html{
+    margin: 0px;
+   height: 100%;
+   width: 100%;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    width: 100%;
+    font-family: poppins;
+    background: linear-gradient(0.378turn, #3f87a6, #ebf8e1, #f69d3c);
+}
+.nav{
+    list-style-type: none;
+    background-color: #dddddd;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    overflow: hidden; 
+}
+.navli{
+    display: flex;
+    float: left;
+    justify-content: center;
+}
+
+.navli a{ 
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding: 8px;
+    background-color: #dddddd;
+}
+
+a:hover{
+    background-color: aquamarine;
+}
+
+.checked{
+    text-decoration: line-through;
+    background: url('../../public/images/check-mark.png') no-repeat left top;
+}
+
+.ulinit{
+    text-align: center;
+}
+.taskul{
+    list-style-type: none;
+    background-color:antiquewhite;
+    display: inline-block ;
+    text-align: center;
+    width: 30%;
+    padding: 20px;
+    border-radius: 30px;
+}
+
+div.ulinit ul li{
+    position: relative;
+    padding: 3px;
+}
+
+div.ulinit ul li::before{
+    content: "";
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url("../../public/images/check-mark.png");
+    background-size: cover;
+    background-position: center;
+    left: 4px;
+
+}
