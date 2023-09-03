@@ -1,0 +1,138 @@
+html{
+    margin: 0px;
+   height: 100%;
+   width: 100%;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    width: 100%;
+    font-family: poppins;
+    background: linear-gradient(0.378turn, #3f87a6, #ebf8e1, #f69d3c);
+}
+.nav{
+    list-style-type: none;
+    background-color: #dddddd;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    overflow: hidden; 
+}
+.navli{
+    display: flex;
+    float: left;
+    justify-content: center;
+}
+
+.navli a{ 
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding: 8px;
+    background-color:cadetblue;
+}
+
+a:hover{
+    background-color: aquamarine;
+}
+
+
+.ulinit{
+    text-align: center;
+}
+.taskul{
+    list-style-type: none;
+    background-color:#f69d3c;
+    display: inline-block ;
+    text-align: center;
+    width: 30%;
+    padding: 20px;
+    border-radius: 30px;
+    margin: 0;
+}
+
+div.ulinit ul li{
+    position: relative;
+    padding: 3px;
+}
+
+div.ulinit ul li::before{
+    content: "";
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url("../images/uncheck-mark\ copy.png");
+    background-size: cover;
+    background-position: center;
+    left: 4px;
+}
+
+
+.checked{
+    text-decoration: line-through;
+}
+div.ulinit ul li.checked::before{
+   background-image: url("../images/check-mark.png");
+}
+
+.h1-parent-class{
+    text-align: center;
+}
+
+.flex-container-h1{
+    background-color: antiquewhite;
+    display: inline-block;
+    width: 30%;
+    text-align: center;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+
+
+div{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+input[type=text] {
+    border-radius: 20px;
+    border: none;
+    background-color:#dddddd;
+    height: 30px;
+    width: 60%;
+    font-family: poppins;
+    font-size: medium;
+    padding-left: 20px;
+
+}
+
+div.inputForm{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin: 10px;
+    background-color: lightblue;
+    padding: 10px;
+    width: 40%;
+    height: 30px;
+    border-radius: 30px;
+}
+
+#addBtn{
+    color: inherit;
+    padding: 0;
+    height: 30px;
+    width: 5em;
+    border-radius: 30px;
+    border: none;
+    background-color:aquamarine;
+    float: right;
+}

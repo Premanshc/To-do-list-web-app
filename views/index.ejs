@@ -1,29 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="./style/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <%- include('./functions.ejs') %>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/style/style.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>To-do List</title>
-</head>
-<body>
-            <ul class="nav">
-                <li class="navli">
-                    <a href="">To-do</a>
-                </li>
-                <li class="navli">
-                    <a href="">Work</a>
-                </li>
-            </ul>
-    <div>
+  </head>
+  <body>
+    <ul class="nav">
+      <li class="navli">
+        <a href="">To-do</a>
+      </li>
+      <li class="navli">
+        <a href="">Work</a>
+      </li>
+    </ul>
+    <div class="h1-parent-class">
+      <div class="flex-container-h1">
         <h1>To do List</h1>
+      </div>
+    </div>
+    <div>
+      <div class="inputForm">
+        <form action="/add" method="POST">
+          <input
+            type="text"
+            name="todoitem"
+            id="todoitem"
+            placeholder="pick up laundry🧺"
+          />
+          <input type="submit" id="addBtn" value="ADD" />
+        </form>
+      </div>
     </div>
     <div class="ulinit">
-        <ul class="taskul">
-            <li class="checked">Task 1</li>
-            <li>Task 2</li>
-            <li>Task 3</li>
-        </ul>
+      <ul class="taskul">
+
+        <li class="task checked">task 1</li>
+        <% if(locals.taskItem){ %>
+          <% taskItem.forEach((task)=>{ %>
+            <li class="task"><%= task %></li>
+          <% }) %>
+        <% } %>
+      
+      </ul>
     </div>
-</body>
+    <script>
+      const taskListEls = document.querySelectorAll(".task");
+
+      taskListEls.forEach((taskListEl) => {
+        taskListEl.addEventListener("click", () => {
+          if (taskListEl.classList.contains("checked")) {
+            taskListEl.classList.remove("checked");
+          } else {
+            taskListEl.classList.add("checked");
+          }
+        });
+      });
+      
+      function addItem(data) {
+        const ulElement = document.getElementById("taskul");
+        if (ulElement) {
+          const liElement = document.createElement("li");
+          liElement.textContent = data;
+          ulElement.appendChild(liElement);
+        }
+      }
+    </script>
+  </body>
 </html>
